@@ -1,12 +1,12 @@
-console.log("ready")
+console.log("ready");
 
 //Original string
 const csv =
-("ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26");
+    "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 
-console.log(csv)
+// console.log(csv);
 
-//Feeling Loopy exercise
+//  Part 0. Feeling Loopy exercise
 // iterate over each char in string, log results
 // Store each “cell” of data in a variable.
 // When you encounter a comma, move to the next cell.
@@ -30,3 +30,16 @@ for (let i = 0; i < csv.length; i++) {
     }
 }
 console.log(data);
+
+// Part 1. Refactor the code
+//array of each row
+const rows = csv.split("\n");
+console.log(rows);
+
+for (let row of rows) {
+    const cells = row.split(",");
+    let cell1, cell2, cell3, cell4;
+    [cell1, cell2, cell3, cell4] = [...cells];
+    console.log(cell1, cell2, cell3, cell4);
+}
+
